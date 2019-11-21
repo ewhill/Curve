@@ -1,0 +1,25 @@
+:host {
+}
+
+::slotted([slot='menu']) {
+	background: var(--dropdown-menu-background-color);
+	border: 1px solid var(--dropdown-menu-border-color);
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px -5px rgba(0,0,0,.3);
+	color: var(--dropwdown-menu-color);
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	z-index: 9999;
+}
+
+#underlay {
+	/*background: rgba(0,0,0,.2);*/
+	display: none;
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 9998;
+}

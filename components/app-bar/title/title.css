@@ -1,0 +1,45 @@
+
+:host {
+}
+
+div#titleContainer {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Arial';
+	height: 64px;
+	justify-content: center;
+}
+
+div#titleContainer[align='center'] {
+	align-items: center;
+}
+
+a {
+	color: initial;
+	text-decoration: none;
+}
+
+::slotted([slot='title']),
+::slotted([slot='subtitle']) {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin: 0px;
+	width: 100%;
+}
+
+::slotted([slot='title']) {
+	color: var(--app-bar-title-color);
+	font-size: 16px;
+	font-weight: 400;
+}
+
+
+::slotted([slot='subtitle']) {
+	color: var(--app-bar-subtitle-color);
+	font-size: 12px;
+	font-kerning: 10;
+	font-weight: 200;
+	margin-top:4px;
+}

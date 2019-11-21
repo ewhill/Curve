@@ -1,0 +1,67 @@
+:root {
+	--app-bar-bg-color: rgb(50, 50, 90);
+	/*--app-bar-bg-color: #4c4ae6;*/
+	--app-bar-height: 64px;
+
+	--app-bar-mobile-width: 600px;
+	--app-bar-small-width: 1280px;
+	--app-bar-medium-width: 1920px;
+	--app-bar-large-width: 3840px;
+
+	--app-bar-title-color: rgb(235, 235, 235);
+	--app-bar-subtitle-color: #dedede;
+
+	--dropdown-menu-background-color: rgb(80, 80, 120);
+	--dropdown-menu-border-color: rgb(0, 0, 0);
+	--dropdown-menu-color: white;
+
+	--icon-button-focus-background-color: rgba(0, 0, 0, 0.2);
+	--icon-button-hover-background-color: rgba(0, 0, 0, 0.1);
+
+	--menu-item-background: transparent;
+	--menu-item-color: rgb(220, 220, 220);
+	--menu-item-divider-color: rgba(0, 0, 0, .3);
+	--menu-item-hover-background: rgba(0, 0, 0, .08);
+
+	background: rgb(20, 20, 30);
+	font-family: 'Titillium Web', sans-serif;
+}
+
+menu-item {
+	--icon-button-focus-background-color: transparent;
+	--icon-button-active-background-color: transparent;
+	--icon-button-hover-background-color: transparent;
+}
+
+app-bar div[slot="Center"] app-bar-title {
+	display: none;
+}
+
+app-bar icon-button[hamburger],
+app-bar dropdown-menu[overflowmenu] {
+	display: none;
+}
+
+@media screen and (max-width: 614px) {
+	app-bar icon-button {
+		display: none;
+	}
+
+	app-bar div[slot="Left"] app-bar-title {
+		display: none;
+	}
+
+	app-bar div[slot="Center"] app-bar-title {
+		display: flex;
+	}
+
+	app-bar icon-button[logo],
+	app-bar icon-button[hamburger],
+	app-bar dropdown-menu[overflowmenu] {
+		display: block;
+	}
+
+	app-bar dropdown-menu icon-button {
+		display: flex;
+	}
+}

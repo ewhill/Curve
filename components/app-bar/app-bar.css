@@ -1,0 +1,81 @@
+:host {
+	background: var(--app-bar-bg-color);
+	left: 0px;
+	min-height: var(--app-bar-height);
+	padding-left: 24px;
+	padding-right: 24px;
+	position: fixed;
+	text-align: center;
+	top: 0px;
+	min-width: calc(100% - 48px);
+	white-space: nowrap;
+}
+
+::slotted(div) {
+	align-items: center;
+	box-sizing: border-box;
+	display: inline-flex;
+	height: 64px;
+	justify-content: center;
+	min-height: 64px;
+	position: relative;
+}
+
+::slotted([slot='Left']) {
+	float: left;
+	justify-content: flex-start;
+	margin-right: 48px;
+	max-width: 256px;
+}
+
+::slotted([slot='Center']) {
+	max-width: calc(100% - 256px - 256px);
+}
+
+::slotted([slot='Right']) {
+	float: right;
+	justify-content: flex-end;
+	margin-left: 48px;
+	max-width: 256px;
+}
+
+/* Smartphones */
+@media only screen and (max-width: 614px) {
+	::slotted([slot='Left']) {
+		margin-right: 24px;
+		max-width: 72px;
+	}
+
+	::slotted([slot='Center']) {
+		text-align: center;
+		width: auto;
+	}
+
+	::slotted([slot='Right']) {
+		margin-left: 24px;
+		max-width: 72px;
+	}
+}
+
+/* Desktops and laptops */
+@media only screen and (min-width : 1280px) {
+	::slotted([slot='Left']) {
+		margin-right: 48px;
+		max-width: 256px;
+	}
+
+	::slotted([slot='Center']) {
+		display: block;
+		max-width: calc(100% - 256px - 256px);
+	}
+
+	::slotted([slot='Right']) {
+		margin-left: 48px;
+		max-width: 256px;
+	}
+}
+
+/* Large screens */
+@media only screen and (min-width : 1920px) {
+	
+}

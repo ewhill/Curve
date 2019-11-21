@@ -1,0 +1,50 @@
+a {
+	align-items: center;
+	background: var(--menu-item-background);
+	color: var(--menu-item-color);
+	cursor: pointer;
+	display: flex;
+	min-height: 48px;
+	min-width: 100%;
+	text-align: left;
+	width: 100%;
+}
+
+a:hover {
+	background: var(--menu-item-hover-background)
+}
+
+a[nohover]:hover {
+	background: initial;
+}
+
+a[noclick] {
+	cursor: initial;
+}
+
+a[divider] {
+	background: var(--menu-item-divider-color);
+	height:1px;
+	min-height: 1px;
+}
+
+::slotted([slot='icon']) {
+	float: left;
+	margin: auto 6px auto 3px;
+}
+
+::slotted([slot='title']) {
+	margin: auto 3px;
+	text-transform: lowercase;
+}
+
+::slotted([slot='badge']) {
+	margin-left: 3px;
+	margin-right: 6px;
+}
+
+div.filler {
+	margin: auto 6px auto 3px;
+	min-height: 48px;
+	min-width: 48px;
+}

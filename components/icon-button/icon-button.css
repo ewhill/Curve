@@ -1,0 +1,135 @@
+:host {
+	--icon-button-size: 48px;
+	--icon-button-image-size: 24px;
+	--icon-button-padding: calc(calc(var(--icon-button-size) - var(--icon-button-image-size)) / 2);
+	/*--icon-button-focus-background-color: rgba(255, 255, 255, 0.6);
+	--icon-button-active-background-color: rgba(255, 255, 255, 0.4);
+	--icon-button-hover-background-color: rgba(255, 255, 255, 0.2);*/
+}
+
+button {
+	align-items: center;
+	background: none;
+	border: 0px;
+	box-shadow: none;
+	box-sizing: border-box;
+	border-radius: 100%;
+	cursor: pointer;
+	display: flex;
+	height: var(--icon-button-size);
+	justify-content: center;
+	max-height: var(--icon-button-size);
+	max-width: var(--icon-button-size);
+	min-height: var(--icon-button-size);
+	min-width: var(--icon-button-size);
+	padding: var(--icon-button-padding);
+	width: var(--icon-button-size);
+}
+
+button.loading {
+	box-sizing: unset;
+	padding: 0px;
+}
+
+button:not(.loading):hover {
+	background: var(--icon-button-hover-background-color);
+}
+
+button:not(.loading):active {
+	background: var(--icon-button-active-background-color);
+}
+
+button:not(.loading):focus {
+	background: var(--icon-button-focus-background-color);
+	outline: none;
+}
+
+button.loading img#icon {
+	display: none;
+}
+
+button.loading div#loading {
+	display: block;
+}
+
+img#icon {
+	display: inline-block;
+	height: var(--icon-button-image-size);
+	max-height: var(--icon-button-image-size);
+	max-width: var(--icon-button-image-size);
+	min-height: var(--icon-button-image-size);
+	min-width: var(--icon-button-image-size);
+	padding: 0;
+	width: var(--icon-button-image-size);
+}
+
+div#loading {
+	background: var(--icon-button-hover-background-color);
+	border: 0px;
+	box-shadow: none;
+	border-radius: 100%;
+	display: none;
+	height: var(--icon-button-size);
+	max-height: var(--icon-button-size);
+	max-width: var(--icon-button-size);
+	min-height: var(--icon-button-size);
+	min-width: var(--icon-button-size);
+	width: var(--icon-button-size);
+
+	-moz-animation:blink normal 2s infinite ease-in-out; /* Firefox */
+    -webkit-animation:blink normal 2s infinite ease-in-out; /* Webkit */
+    -ms-animation:blink normal 2s infinite ease-in-out; /* IE */
+    animation:blink normal 2s infinite ease-in-out; /* Opera */
+}
+
+/* Firefox */
+@-moz-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	} 
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Webkit */
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	} 
+	100% {
+		opacity: 1;
+	}
+}
+
+/* IE */
+@-ms-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	} 
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Opera */
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	} 
+	100% {
+		opacity: 1;
+	}
+}

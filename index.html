@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<script src='./components/base.js'></script>
+		<script src='./components/dropdown-menu/dropdown-menu.js'></script>
+		<script src='./components/menu-item/menu-item.js'></script>
+		<script src='./components/icon-button/icon-button.js'></script>
+		<script src='./components/app-bar/title/title.js'></script>
+		<script src='./components/app-bar/app-bar.js'></script>
+		<script src='./components/search-bar/search-bar.js'></script>
+
+		<script src='./controllers/base.js'></script>
+		<script src='./controllers/AppBarController.js'></script>
+		<script src='./controllers/MenuItemController.js'></script>
+
+		<link rel="stylesheet" href="./index.css"/>
+
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<app-bar [controller]='AppBarController' (menuitemclick)='onMenuItemClicked'>
+			<div slot='Left'>
+				<icon-button icon='square' hamburger></icon-button>
+				<icon-button icon='trapezoid' logo></icon-button>
+				<app-bar-title titlehref="/">
+					<div slot="title">{{title}}</div>
+					<div slot="subtitle">{{subtitle}}</div>
+				</app-bar-title>
+			</div>
+			<div slot='Center'>
+				<app-bar-title titlehref="/" align='center'>
+					<div slot="title">{{title}}</div>
+					<div slot="subtitle">{{subtitle}}</div>
+				</app-bar-title>
+				<search-bar (keyup)='onKeyUp'></search-bar>
+			</div>
+			<div slot='Right'>
+				<dropdown-menu overflowmenu>
+					<div slot="anchor">
+						<icon-button icon='diamond'></icon-button>
+					</div>
+					<div slot="menu">
+						<menu-item nohover noclick>
+							<div slot="title">Actions</div>
+						</menu-item>
+						<menu-item divider></menu-item>
+						<menu-item>
+							<icon-button slot="icon" icon='hexagon'></icon-button>
+							<div slot="title">Beep</div>
+						</menu-item>
+						<menu-item>
+							<icon-button slot="icon" icon='pentagon'></icon-button>
+							<div slot="title">Boop</div>
+						</menu-item>
+					</div>
+				</dropdown-menu>
+				<icon-button icon='hexagon'></icon-button>
+				<icon-button icon='pentagon'></icon-button>
+				<dropdown-menu usermenu>
+					<div slot="anchor">
+						<icon-button icon='star'></icon-button>
+					</div>
+					<div slot="menu">
+						<menu-item [controller]='MenuItemController' (click)='onItemClick'>
+							<div slot="title">hello</div>
+						</menu-item>
+						<menu-item [controller]='MenuItemController' (click)='onItemClick'>
+							<div slot="title">world</div>
+						</menu-item>
+						<menu-item [controller]='MenuItemController' (click)='onItemClick'>
+							<div slot="title">itsaa</div>
+						</menu-item>
+						<menu-item [controller]='MenuItemController' (click)='onItemClick'>
+							<div slot="title">meeee</div>
+						</menu-item>
+					</div>
+				</dropdown-menu>
+			</div>
+		</app-bar>
+	</body>
+</html>
